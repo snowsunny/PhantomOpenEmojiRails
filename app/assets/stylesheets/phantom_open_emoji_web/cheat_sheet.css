@@ -1,0 +1,46 @@
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+
+.mt-s {
+  margin-top: 10px;
+}
+.mt-m {
+  margin-top: 15px;
+}
+.mt-l {
+  margin-top: 20px;
+}
+
+.icon-name {
+  margin-top: 25px;
+}
+
+/* Large desktop */
+@media (min-width: 1200px) {
+  .icon-name {
+    margin-top: 25px;
+  }
+}
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+  .icon-name {
+    margin-top: 17px;
+  }
+}
+ 
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+  .icon-name {
+    margin-top: 0px;
+  }
+}
+ 
+/* Landscape phones and down */
+@media (max-width: 480px) {
+  .icon-name {
+    margin-top: 0px;
+  }
+}
