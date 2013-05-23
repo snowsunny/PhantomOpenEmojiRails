@@ -1,6 +1,6 @@
 require 'test_helper'
 
-module PhantomOpenEmojiWeb
+module PoeRails
   class CheatSheetControllerTest < ActionController::TestCase
     test "should get index" do
       get :index
