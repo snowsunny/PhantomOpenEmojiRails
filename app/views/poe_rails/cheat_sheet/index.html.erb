@@ -1,42 +1,45 @@
 <div class="container">
   <div class="row-fluid">
     <div class="span12">
-      <h2 class="text-center">Phantom Open Emoji Cheat Sheet</h2>
+      <div class="row-fluid text-center">
+        <a id="tooltip" href="#" class="btn" data-toggle="popover" data-placement="bottom"
+        data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." title="Popover on bottom">Popover on bottom</a>
+      </div>
+      <div class="row-fluid">
+        <h2 class="text-center">Phantom Open Emoji Cheat Sheet</h2>
+      </div>
       <hr style="border-style:solid;">
-      <ul class="unstyled">
-
-        <% @category.each_with_index do |category_name, i| %>
-          <h3> <%= category_name %> </h3>
-
+      <div class="row-fluid">
+        <div class="span12">
           <div class="row-fluid">
-            <% @divided_emojis[i].each.with_index(1) do |item, j| %>
-              <div class="span6">
-                <div class="span2">
-                  <%= image_tag @path + item['name'] + '.png' %>
-                </div>
-                <div class="span10">
-                  <p class="icon-name">
-                    &nbsp;&nbsp;:<%= item['name'] %>:
-                  </p>
-                </div>
-              </div>
+            <% @category.each_with_index do |category_name, i| %>
+              <h3><%= category_name %></h3>
+              <div class="row-fluid">
+                <% @divided_emojis[i].each.with_index(1) do |item, j| %>
 
-              <% if (j == @divided_emojis[i].size) && (i == @category.size - 1) %>
-                </div>
-                <hr style="border-style:solid;">
-              <% elsif j == @divided_emojis[i].size %>
-                </div>
+                  <div class="span6">
+                    <div class="span2">
+                      <%= image_tag @path + item['name'] + '.png' %>
+                    </div>
+                    <div class="span10">
+                      <p class="icon-name">
+                        &nbsp;&nbsp;:<%= item['name'] %>:
+                      </p>
+                    </div>
+                  </div>
+    
+                  <% if j % 2 == 0 %>
+                    </div>
+                    <div class="row-fluid mt-l">
+                  <% end %>
+                <% end %>
                 <hr style="border-style:dashed;">
-              <% elsif j % 2 == 0 %>
-                </div>
-                <div class="row-fluid mt-l">
-              <% end %>
-
+              </div>
             <% end %>
-
-        <% end %>
-
-      </ul>
+            <hr style="border-style:solid;">
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </div>
