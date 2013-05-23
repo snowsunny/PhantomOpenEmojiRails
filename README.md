@@ -1,5 +1,5 @@
-Phantom Open Emoji Web
-======================
+Phantom Open Emoji for Rails
+============================
 Web scripts and libraries to use Phantom Open Emoji in your web app or on your site.
 Includes bindings and tools for Rails and for node.
 
