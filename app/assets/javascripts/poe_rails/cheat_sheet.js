@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  $('#tooltip').defaultPluginName({
-    propertyName: 'a custom value'
+  $('#tooltip').poe_pallet({
+    hoge: 'aaaaaaaa'
   });
 });

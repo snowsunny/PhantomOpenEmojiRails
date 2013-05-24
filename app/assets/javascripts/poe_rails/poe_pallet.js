@@ -14,7 +14,7 @@
   // Create the defaults once
   var pluginName = "poe_pallet",
       defaults = {
-        hoge: "value"
+        hoge: "hoge dayo-"
       };
 
   // The actual plugin constructor
@@ -42,10 +42,13 @@
       // and this.options
       // you can add more functions like the one below and
       // call them like so: this.yourOtherFunction(this.element, this.options).
+      
+      this.printElement(this.element);
     },
 
-    yourOtherFunction: function(el, options) {
-    // some logic
+    printElement: function(el, options) {
+      // some logic
+      console.log(el);
     }
   };
 
