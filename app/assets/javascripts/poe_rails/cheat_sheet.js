@@ -43,11 +43,11 @@ $(document).ready(function(){
   $("#tooltip").poe_pallet(emoji_index);
 });
 
-var emoji_index = new Array()
+var emoji_index = new Array();
 function set_index(name) {
-  emoji_index.push(name)
+  emoji_index.push(name);
 }
 
 function set_name(name) {
-  alert(name)
+  document.getElementById("emoji_name").value = ":" + name + ":";
 }
