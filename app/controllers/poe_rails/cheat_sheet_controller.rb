@@ -1,6 +1,6 @@
-require_dependency "phantom_open_emoji_web/application_controller"
+require_dependency "poe_rails/application_controller"
 
-module PhantomOpenEmojiWeb
+module PoeRails
   class CheatSheetController < ApplicationController
     require 'poe'
 

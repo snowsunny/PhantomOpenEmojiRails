@@ -14,4 +14,3 @@ Gem::Specification.new do |s|
   s.add_dependency 'phantom_open_emoji'
   s.add_dependency 'phantom_open_emoji_static'
 end
-

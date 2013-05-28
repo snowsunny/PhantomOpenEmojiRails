@@ -1,4 +1,4 @@
-module PhantomOpenEmojiWeb
+module PoeRails
   module CheatSheetHelper
   end
 end
