@@ -1,5 +1,5 @@
 <script>
-  <% for i in 0..@category.size - 1 %>
+  <% for i in 0..@categories.size - 1 %>
     <% @divided_emojis[i].each do |item| %>
       set_index('<%= item['name'] %>')
     <% end %>
@@ -9,6 +9,10 @@
 <div class="container">
   <div class="row-fluid">
     <div class="span12">
+      <div class="row-fluid">
+        <h2 class="text-center">Phantom Open Emoji Cheat Sheet</h2>
+      </div>
+      <hr style="border-style:solid;">
 
       <div class="row-fluid text-center">
         <input type="text" id="emoji_name">
@@ -17,45 +21,38 @@
       </div>
 
       <div class="row-fluid">
-        <h2 class="text-center">Phantom Open Emoji Cheat Sheet</h2>
-      </div>
+        <div class="span12">
 
-      <hr style="border-style:solid;">
-      <ul class="unstyled">
+          <% @categories.each_with_index do |category, i| %>
+            <div class="row-fluid">
+              <h3><%= category %></h3>
+            </div>
+            <div class="row-fluid">
 
-        <% @category.each_with_index do |category_name, i| %>
-          <h3> <%= category_name %> </h3>
-
-          <div class="row-fluid">
-            <% @divided_emojis[i].each.with_index(1) do |item, j| %>
-
-              <div class="span6">
-                <div class="span2">
-                  <%= image_tag @path + item['name'] + '.png' %>
+              <% @divided_emojis[i].each_with_index do |item, j| %>
+                <% if j % 2 == 0 and j != 0 %>
+                  </div>
+                  <div class="row-fluid mt-l">
+                <% end %>
+                <div class="span6">
+                  <div class="span2">
+                    <%= image_tag @path + item['name'] + '.png' %>
+                  </div>
+                  <div class="span10">
+                    <p class="icon-name">
+                      &nbsp;&nbsp;:<%= item['name'] %>:
+                    </p>
+                  </div>
                 </div>
-                <div class="span10">
-                  <p class="icon-name">
-                    &nbsp;&nbsp;:<%= item['name'] %>:
-                  </p>
-                </div>
-              </div>
-
-              <% if (j == @divided_emojis[i].size) && (i == @category.size - 1) %>
-                </div>
-                <hr style="border-style:solid;">
-              <% elsif j == @divided_emojis[i].size %>
-                </div>
-                <hr style="border-style:dashed;">
-              <% elsif j % 2 == 0 %>
-                </div>
-                <div class="row-fluid mt-l">
               <% end %>
 
-            <% end %>
+            </div>
+            <hr style="border-style:dashed;">
+          <% end %>
 
-        <% end %>
-
-      </ul>
+          <hr style="border-style:solid;">
+        </div>
+      </div>
     </div>
   </div>
 </div>

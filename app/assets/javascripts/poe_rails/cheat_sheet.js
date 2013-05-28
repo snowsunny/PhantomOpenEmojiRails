@@ -39,9 +39,9 @@
   }
 })(jQuery)
 
-$(document).ready(function(){
-  $("#tooltip").poe_pallet(emoji_index);
-});
+//$(document).ready(function(){
+//  $("#tooltip").poe_pallet(emoji_index);
+//});
 
 var emoji_index = new Array();
 function set_index(name) {
@@ -51,3 +51,10 @@ function set_index(name) {
 function set_name(name) {
   document.getElementById("emoji_name").value = ":" + name + ":";
 }
+
+$(document).ready(function(){
+  $("#tooltip").poe_pallet(emoji_index);
+  //$('#tooltip').poe_pallet({
+  //  hoge: 'aaaaaaaa'
+  //});
+});

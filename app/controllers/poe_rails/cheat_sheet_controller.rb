@@ -9,23 +9,23 @@ module PoeRails
       @index = @poe.instance_variable_get("@index")
       @path = '/assets/poe/png64/'
 
-      set_category
+      set_categories
       set_divided_emojis
     end
 
-    def set_category
-      @category = Array.new
+    def set_categories
+      @categories = Array.new
       @index.each do |item|
-        @category << item['category'] if !@category.include?(item['category'])
+        @categories << item['category'] if !@categories.include?(item['category'])
       end
     end
 
     def set_divided_emojis
       @divided_emojis = Array.new
-      @category.each do |item|
+      @categories.each do |category|
         emojis = Array.new
         @index.each do |emoji|
-          if item == emoji['category']
+          if category == emoji['category']
             emojis << emoji
           end
         end
