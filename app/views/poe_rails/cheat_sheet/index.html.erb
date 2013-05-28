@@ -11,9 +11,9 @@
       <hr style="border-style:solid;">
       <div class="row-fluid">
         <div class="span12">
-          <% @category.each_with_index do |category_name, i| %>
+          <% @categories.each_with_index do |category, i| %>
             <div class="row-fluid">
-              <h3><%= category_name %></h3>
+              <h3><%= category %></h3>
             </div>
             <div class="row-fluid">
               <% @divided_emojis[i].each_with_index do |item, j| %>
@@ -27,7 +27,7 @@
                   </div>
                   <div class="span10">
                     <p class="icon-name">
-                      &nbsp;&nbsp;:<%= item['name'] %>:<%=j%>
+                      &nbsp;&nbsp;:<%= item['name'] %>:
                     </p>
                   </div>
                 </div>
