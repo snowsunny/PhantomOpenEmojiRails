@@ -14,7 +14,7 @@
   // Create the defaults once
   var pluginName = "poe_pallet",
       defaults = {
-        hoge: "hoge dayo-"
+        version: 0.5
       };
 
   // The actual plugin constructor
@@ -30,6 +30,9 @@
     this._defaults = defaults;
     this._name = pluginName;
 
+    this.path = "/assets/poe/png20/";
+    this.pallet_html = "";
+
     this.init();
   }
 
@@ -43,20 +46,39 @@
       // you can add more functions like the one below and
       // call them like so: this.yourOtherFunction(this.element, this.options).
 
-      this.printElement(this.element);
-      //this.set_pallet_element()
+      //this.printElement(this.element);
+      this.create_pallet(this.options.data, this.path);
+      this.set_pallet_element(this.pallet_html);
     },
 
     printElement: function(el, options) {
       // some logic
       console.log(el);
-    }
+    },
+
+    create_pallet: function(emoji_index, path) {
+      var parts_start = "<div>";
+      var parts_end = "</div>";
+      var pallet_html = parts_start;
+
+      for (i = 0; i < emoji_index.length; i++) {
+        pallet_html += "<input type='image' src='" + path + emoji_index[i] +
+                       ".png' onclick='set_name(" + '"'+ emoji_index[i] + '"' + ")'>";
+        if (i < emoji_index.size - 1) {
+          pallet_html += parts_end;
+        } else if (i % 10 == 9) {
+          pallet_html += parts_end;
+          pallet_html += parts_start;
+        }
+      }
+      this.pallet_html = pallet_html;
+    },
 
     set_pallet_element: function(pallet_html) {
       $('#tooltip').popover({
         trigger:'click',
         content:pallet_html
-      })
+      });
     }
 
   };
