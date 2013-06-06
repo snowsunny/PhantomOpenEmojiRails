@@ -1,11 +1,3 @@
-<script>
-  <% for i in 0..@categories.size - 1 %>
-    <% @divided_emojis[i].each do |item| %>
-      set_index('<%= item['name'] %>')
-    <% end %>
-  <% end %>
-</script>
-
 <div class="container">
   <div class="row-fluid">
     <div class="span12">
